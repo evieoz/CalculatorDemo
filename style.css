@@ -1,12 +1,32 @@
-.calc-display {
-    background: rgb(255, 199, 226);
-    color: rgb(255, 255, 255);
-    border: 1px solid grey;
-    border-radius: 5px;
-    height: 50px;
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #d3e9ff, #9acdff, #7b8bd6);
+}
+
+.card {
+    background: rgb(224, 235, 255);
+    border: 2px solid rgb(255, 255, 255);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    box-shadow: 0 10px 30px rgb(0, 0, 0);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+
+.card:hover {
+    box-shadow: 0 15px 40px rgba(201, 178, 130, 0.45);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transform: translateY(-6px);
 }
 
 .calc-display {
+    background: rgb(255, 255, 255);
+    color: rgb(92, 131, 165);
+    border: 1px solid grey;
+    border-radius: 5px;
+}
+
+.calc-history {
     min-height: 1.2rem;
     opacity: 0.75;
     font-family: ui-monospace, Menlo, Consolas, "Courier New", monospace;
