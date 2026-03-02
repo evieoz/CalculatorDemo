@@ -103,3 +103,35 @@ function clearAll () {
     setStatus('Cleared.')
     updateScreen()
 }
+
+function calculate() {
+    setStatus('')
+    if (storedNumber === null || currentOperator === '' || typedNumberText === '') {
+        setStatus('Incomplete operation.')
+        updateScreen()
+        return
+    }
+
+
+    const secondNumber = Number(typedNumberText)
+
+    historyParts = [String(storedNumber), currentOperator, String(secondNumber)]
+
+    let result = storedNumber
+
+    if (currentOperator === '+') {
+        result = storedNumber + secondNumber
+    } else if (currentOperator === '-') {
+        result = storedNumber - secondNumber
+    } else if (currentOperator === '*') {
+        result = storedNumber * secondNumber
+    } else if (currentOperator === '/') {
+        result = storedNumber / secondNumber
+    }
+
+    storedNumber = result
+    currentOperator = ''
+    typedNumberText = ''
+    setStatus('Calculated.')
+    updateScreen()
+}
